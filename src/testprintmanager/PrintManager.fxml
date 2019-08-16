@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="320.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testprintmanager.Controller">
+  <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+               <items>
+                  <MenuItem fx:id="AddFile" mnemonicParsing="false" onAction="#Pressed" text="Добавить документ в очередь" />
+                  <MenuItem fx:id="RemoveFile" mnemonicParsing="false" onAction="#Pressed" text="Удалить документ из очереди" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Диспетчер">
+               <items>
+                  <MenuItem fx:id="StopPrint" mnemonicParsing="false" onAction="#Pressed" text="Остановить печать" />
+                  <MenuItem fx:id="PrintStat" mnemonicParsing="false" onAction="#Pressed" text="Список напечатанных документов" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="StatisticAlert" mnemonicParsing="false" onAction="#Pressed" text="Средняя продолжительность печати" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="320.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="PrintTable" layoutY="3.0" prefHeight="298.0" prefWidth="640.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+               <columns>
+                  <TableColumn fx:id="ColumnName" editable="false" prefWidth="149.0" text="Имя файла" />
+                  <TableColumn fx:id="ColumnType" editable="false" prefWidth="99.0" text="Тип Документа" />
+                  <TableColumn fx:id="ColumnSize" editable="false" prefWidth="93.0" text="Размер Бумаги" />
+                  <TableColumn fx:id="ColumnTime" editable="false" prefWidth="184.0" text="Время печати" />
+                  <TableColumn fx:id="ColumnPriority" editable="false" prefWidth="133.0" text="Приоритет" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
